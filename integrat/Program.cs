@@ -17,8 +17,8 @@ namespace ConsoleApplication2
 {
     class Program
     {
-        private const String cs = @"Data Source=HUAWEI-NICKY;Initial Catalog=INSEE;Trusted_Connection=true";
-        //private const String cs = @"Data Source=HUAWEI-NICKY;Initial Catalog=INSEE;User=test;Password=MotdepAss3;TrustServerCertificate=True";
+        private const String cs = @"Data Source=LAPTOP-MMF5I8NQ;Initial Catalog=CommuneBD;Trusted_Connection=true";
+        //private const String cs = @"Data Source=LAPTOP-MMF5I8NQ;Initial Catalog=CommuneBD;User=test;Password=MotdepAss3;TrustServerCertificate=True";
         private const string baseURL = "https://geo.api.gouv.fr/communes/";
         private const string endurl = "?fields=&format=json";
 
@@ -33,7 +33,7 @@ namespace ConsoleApplication2
             using (SqlConnection myConnection = new SqlConnection(cs))
             {
                 // On lit les communes de la base 
-                string oString = "Select * from Commune";
+                string oString = "Select * from CommuneBD";
                 SqlCommand oCmd = new SqlCommand(oString, myConnection);
                 myConnection.Open();
                 using (SqlDataReader oReader = oCmd.ExecuteReader())
